@@ -25,7 +25,7 @@ function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post("http://localhost:8080/user", userData)
+            .post("https://user-management-server-production.up.railway.app/user", userData)
             .then((res) => {
                 console.log(res.data);
                 setSingUp(true);

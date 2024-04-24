@@ -1,0 +1,1 @@
+const MY_URL = 'https://user-management-server-production.up.railway.app/';

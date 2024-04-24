@@ -38,7 +38,7 @@ function Login() {
         console.log(password);
         e.preventDefault();
         axios
-            .get(`http://localhost:8080/users/${username}/${password}`)
+            .get(`https://user-management-server-production.up.railway.app/users/${username}/${password}`)
             .then((res) => {
                 setUserData(res.data);
                 setLogedIn(true);
@@ -54,7 +54,7 @@ function Login() {
 
     const deleteUser = () => {
         axios
-            .delete(`http://localhost:8080/users/${userData.userId}`)
+            .delete(`https://user-management-server-production.up.railway.app/users/${userData.userId}`)
             .then(() => {
                 setLogedIn(false)
                 console.log("user deleted");
