@@ -70,7 +70,7 @@ function Login() {
                 (
                     <div className='flex lg:flex-row flex-col w-full mt-2'>
 
-                        <div className='flex flex-col items-center bg-white p-10 mr-2 rounded w-2/5'>
+                        <div className='flex flex-col items-center bg-white p-10 mr-2 rounded lg:w-2/5'>
                             <img className='w-60' src="https://i.pinimg.com/564x/0c/6f/39/0c6f39dac4d7f30139a7d61ee28a2ef5.jpg" alt="" />
                             <h1 className=' font-semibold text-neutral-700 text-3xl text-center'>{userData.fullName}</h1>
                             <p className=' mt-2 text-xl text-neutral-500 text-center'>{userData.bio}</p>
@@ -80,7 +80,7 @@ function Login() {
                             </div>
                         </div>
 
-                        <div className='bg-white ml-2 rounded px-10 py-5 w-3/5'>
+                        <div className='bg-white ml-2 rounded px-10 py-5 lg:w-3/5'>
                             <div className='border-solid border-b-2 border-neutral-300 flex pb-3 my-4'>
                                 <h3 className='w-2/5 text-neutral-700 text-xl font-medium'>Full Name</h3>
                                 <h3 className='w-3/5 text-neutral-500 text-xl font-medium'>{userData.fullName}</h3>
