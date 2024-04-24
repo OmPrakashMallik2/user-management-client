@@ -7,7 +7,7 @@ function Nav() {
     return (
         <div className='bg-white flex justify-between p-5'>
             <div className='w-1/2'>
-                <Link to="/" className='text-center text-xl font-bold text-blue-500'>User Management</Link>
+                <Link to="/" className='text-center text-xl font-bold text-blue-600'>User Management</Link>
             </div>
             <div className='w-1/2 flex justify-end gap-2'>
                 <Button onClick={() => navigate('/login')} variant="contained">Login</Button>

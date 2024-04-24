@@ -64,11 +64,11 @@ function Login() {
 
 
     return (
-        <div>
+        <div >
             {logedIn ?
 
                 (
-                    <div className='flex w-full mt-4'>
+                    <div className='flex w-full mt-2'>
 
                         <div className='flex flex-col items-center bg-white p-10 mr-2 rounded w-2/5'>
                             <img className='w-60' src="https://i.pinimg.com/564x/0c/6f/39/0c6f39dac4d7f30139a7d61ee28a2ef5.jpg" alt="" />
@@ -113,7 +113,7 @@ function Login() {
                     </div>
                 )
                 :
-                (<div className='mt-4 rounded p-5 bg-white'>
+                (<div className='mt-2 rounded p-5 bg-white'>
                     {problem &&
                         (<h2 className='text-xl font-bold text-center text-red-500 p-4'>{problem}</h2>)
                     }
@@ -121,7 +121,7 @@ function Login() {
                         <h3 className='text-3xl font-bold mb-2 text-neutral-800'>Login</h3>
                         <TextField name="username" value={username} onChange={handleChange} id="outlined-basic" label="username" variant="outlined" />
                         {/* <input name="username" value={username} onChange={handleChange} type="text" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Username' required /> */}
-                        <TextField name="password" value={password} onChange={handleChange} id="outlined-basic" label="password" variant="outlined" />
+                        <TextField type='password' name="password" value={password} onChange={handleChange} id="outlined-basic" label="password" variant="outlined" />
                         {/* <input name="password" value={password} onChange={handleChange} type="password" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Password' required /> */}
                         {/* <button type="submit" className='m-2 text-xl font-semibold px-6 py-3 bg-blue-500 text-white rounded'>Submit</button> */}
                         <Button type="submit" variant="contained">Login</Button>
