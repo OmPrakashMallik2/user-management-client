@@ -1,3 +1,4 @@
+import { Button, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
 
@@ -114,13 +115,16 @@ function Login() {
                 :
                 (<div className='mt-4 rounded p-5 bg-white'>
                     {problem &&
-                        (<h2 className='text-2xl font-bold text-center text-red-500 p-4'>{problem}</h2>)
+                        (<h2 className='text-xl font-bold text-center text-red-500 p-4'>{problem}</h2>)
                     }
-                    <form onSubmit={handleSubmit} className='flex flex-col items-center'>
+                    <form onSubmit={handleSubmit} className='flex flex-col gap-5 items-center'>
                         <h3 className='text-3xl font-bold mb-2 text-neutral-800'>Login</h3>
-                        <input name="username" value={username} onChange={handleChange} type="text" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Username' required />
-                        <input name="password" value={password} onChange={handleChange} type="password" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Password' required />
-                        <button type="submit" className='m-2 text-xl font-semibold px-6 py-3 bg-blue-500 text-white rounded'>Submit</button>
+                        <TextField name="username" value={username} onChange={handleChange} id="outlined-basic" label="username" variant="outlined" />
+                        {/* <input name="username" value={username} onChange={handleChange} type="text" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Username' required /> */}
+                        <TextField name="password" value={password} onChange={handleChange} id="outlined-basic" label="password" variant="outlined" />
+                        {/* <input name="password" value={password} onChange={handleChange} type="password" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Password' required /> */}
+                        {/* <button type="submit" className='m-2 text-xl font-semibold px-6 py-3 bg-blue-500 text-white rounded'>Submit</button> */}
+                        <Button type="submit" variant="contained">Login</Button>
                     </form>
                 </div>)
 

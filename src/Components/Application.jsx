@@ -7,7 +7,7 @@ import Login from './Login';
 
 function Application() {
     return (
-        <div className='mx-32 my-8'>
+        <div className=''>
             <Nav />
             <Routes>
                 <Route path="/" element={<Home />} />
