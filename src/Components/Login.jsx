@@ -64,8 +64,8 @@ function Login() {
                 }
                 <form onSubmit={handleSubmit} className='flex flex-col gap-5 items-center'>
                     <h3 className='text-3xl font-bold mb-2 text-neutral-800'>Login</h3>
-                    <TextField name="username" value={username} onChange={handleChange} id="outlined-basic" label="username" variant="outlined" />
-                    <TextField type='password' name="password" value={password} onChange={handleChange} id="outlined-basic" label="password" variant="outlined" />
+                    <TextField required name="username" value={username} onChange={handleChange} id="outlined-basic" label="username" variant="outlined" />
+                    <TextField required type='password' name="password" value={password} onChange={handleChange} id="outlined-basic" label="password" variant="outlined" />
                     <Button type="submit" variant="contained">Login</Button>
                 </form>
             </div>

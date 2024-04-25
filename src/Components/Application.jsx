@@ -8,7 +8,7 @@ import UserProfile from './UserProfile';
 
 function Application() {
     return (
-        <div className=''>
+        <div className='h-screen'>
             <Nav />
             <Routes>
                 <Route path="/" element={<Home />} />
