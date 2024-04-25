@@ -1,2 +1,3 @@
+# dployed link: https://user-management-client-neon.vercel.app/
 
-Backeknd repo: 
+# Backend repo: https://github.com/OmPrakashMallik2/user-management-server
