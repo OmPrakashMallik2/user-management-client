@@ -18,7 +18,7 @@ function Home() {
                 <Button onClick={() => navigate('/login')} variant="contained">Login</Button>
                 <Button onClick={() => navigate('/signup')} variant="contained">Signup</Button>
             </div>
-            <p className='text-xs font-semibold text-center text-neutral-500 pt-10'>Developed by: Om Prakash Mallik</p>
+            <p className='text-xs font-semibold text-center text-neutral-500 pt-10 fixed bottom-1'>Developed by: Om Prakash Mallik</p>
 
         </div>
     )
