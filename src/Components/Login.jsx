@@ -9,7 +9,6 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [problem, setProblem] = useState('')
-    // const [logedIn, setLogedIn] = useState(true);
     const navigate = useNavigate();
     const [userData, setUserData] = useState(
         {
@@ -45,9 +44,8 @@ function Login() {
             .get(`https://user-management-server-production.up.railway.app/users/${username}/${password}`)
             .then((res) => {
                 setUserData(res.data);
-                // setLogedIn(true);
                 setProblem('');
-                navigate(<UserProfile userDataProp={userData} />)
+                navigate('/profile', { state: { userData: res.data } })
                 console.log(res.data);
             }).catch((err) => {
                 console.log(err)
@@ -67,10 +65,7 @@ function Login() {
                 <form onSubmit={handleSubmit} className='flex flex-col gap-5 items-center'>
                     <h3 className='text-3xl font-bold mb-2 text-neutral-800'>Login</h3>
                     <TextField name="username" value={username} onChange={handleChange} id="outlined-basic" label="username" variant="outlined" />
-                    {/* <input name="username" value={username} onChange={handleChange} type="text" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Username' required /> */}
                     <TextField type='password' name="password" value={password} onChange={handleChange} id="outlined-basic" label="password" variant="outlined" />
-                    {/* <input name="password" value={password} onChange={handleChange} type="password" className='m-2 text-xl font-semibold p-3  bg-blue-50 outline-none rounded' placeholder='Password' required /> */}
-                    {/* <button type="submit" className='m-2 text-xl font-semibold px-6 py-3 bg-blue-500 text-white rounded'>Submit</button> */}
                     <Button type="submit" variant="contained">Login</Button>
                 </form>
             </div>
