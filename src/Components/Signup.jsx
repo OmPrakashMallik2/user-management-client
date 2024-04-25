@@ -43,12 +43,13 @@ function Signup() {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
-        reader.onload = () => {
+
+        reader.onloadend = () => {
             setUserData({ ...userData, image: reader.result });
         };
-
-        // console.log("image details" + reader.readAsDataURL(file));
-        reader.readAsDataURL(file);
+        if (file) {
+            reader.readAsDataURL(file); // Reading the file as a data URL
+        }
     };
 
 
@@ -99,7 +100,7 @@ function Signup() {
                                 <VisuallyHiddenInput onChange={handleImageChange} type="file" />
                             </Button> */}
 
-                            <input type="file" onChange={handleImageChange}  />
+                            <input type="file" onChange={handleImageChange} />
 
                             <TextField
                                 required
