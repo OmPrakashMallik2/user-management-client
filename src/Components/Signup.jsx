@@ -41,13 +41,12 @@ function Signup() {
     };
 
     const handleImageChange = (e) => {
-        // const file = e.target.files[0];
-        // console.log(file);
-        // const reader = new FileReader();
-        // reader.onload = () => {
-        //     setUserData({ ...userData, image: reader.result });
-        // };
-        // reader.readAsDataURL(file);
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+            setUserData({ ...userData, image: reader.result });
+        };
+        reader.readAsDataURL(file);
     };
     
 
