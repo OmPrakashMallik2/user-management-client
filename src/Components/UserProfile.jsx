@@ -23,7 +23,7 @@ function UserProfile() {
             <div className='flex lg:flex-row flex-col w-full mt-2 gap-1'>
 
                 <div className='flex flex-col items-center bg-white p-10 rounded lg:w-2/5'>
-                    <img className='w-60' src={userDataProp.image} alt="user-profile" />
+                    <img className='w-60' src="https://i.pinimg.com/564x/0c/6f/39/0c6f39dac4d7f30139a7d61ee28a2ef5.jpg" alt="user" />
                     <h1 className=' font-semibold text-neutral-700 text-3xl text-center'>{userDataProp.fullName}</h1>
                     <p className=' mt-2 text-xl text-neutral-500 text-center'>{userDataProp.bio}</p>
                     <div className='mt-5 flex justify-between'>

@@ -2,7 +2,6 @@ import { Button, TextField } from '@mui/material';
 import axios from 'axios'
 import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 
 
@@ -38,18 +37,6 @@ function Signup() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });
-    };
-
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-            setUserData({ ...userData, image: reader.result });
-        };
-        if (file) {
-            reader.readAsDataURL(file); // Reading the file as a data URL
-        }
     };
 
 
@@ -88,19 +75,6 @@ function Signup() {
                     <div className=''>
                         <form onSubmit={handleSubmit} className='flex flex-col bg-white rounded lg:px-40 p-5 mt-2 gap-4 lg:gap-2'>
                             <h1 className='text-2xl font-bold bg-blue-50  text-center p-5 rounded mb-3'>User Registration</h1>
-                            <img className='w-40' src={userData.image} alt="your-profile" />
-                            {/* <Button
-                                component="label"
-                                role={undefined}
-                                variant="outlined"
-                                tabIndex={-1}
-                                startIcon={<CloudUploadIcon />}
-                            >
-                                Upload image
-                                <VisuallyHiddenInput onChange={handleImageChange} type="file" />
-                            </Button> */}
-
-                            <input type="file" onChange={handleImageChange} name="image" id="image" />
 
                             <TextField
                                 required
