@@ -57,7 +57,7 @@ function Signup() {
         console.log(userData);
         e.preventDefault();
         axios
-            .post("https://user-management-server-production.up.railway.app/user", userData)
+            .post(`https://user-management-server-production.up.railway.app/user`, userData)
             .then((res) => {
                 console.log(res.data);
                 setSingUp(true);
@@ -100,7 +100,7 @@ function Signup() {
                                 <VisuallyHiddenInput onChange={handleImageChange} type="file" />
                             </Button> */}
 
-                            <input type="file" onChange={handleImageChange} />
+                            <input type="file" onChange={handleImageChange} name="image" id="image" />
 
                             <TextField
                                 required
