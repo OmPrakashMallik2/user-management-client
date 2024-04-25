@@ -21,7 +21,8 @@ function Login() {
             gender: '',
             qualifications: '',
             address: '',
-            contactNumber: ''
+            contactNumber: '',
+            image: ''
         }
     )
 

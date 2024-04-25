@@ -16,7 +16,7 @@ const VisuallyHiddenInput = styled('input')({
     left: 0,
     whiteSpace: 'nowrap',
     width: 1,
-  });
+});
 
 function Signup() {
 
@@ -31,13 +31,24 @@ function Signup() {
         gender: '',
         qualifications: '',
         address: '',
-        contactNumber: ''
+        contactNumber: '',
+        image: null
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });
     };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+            setUserData({ ...userData, image: reader.result });
+        };
+        reader.readAsDataURL(file);
+    };
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -56,7 +67,8 @@ function Signup() {
                     gender: '',
                     qualifications: '',
                     address: '',
-                    contactNumber: ''
+                    contactNumber: '',
+                    image: null
                 });
             }).catch((err) => {
                 console.error(err);
@@ -74,7 +86,7 @@ function Signup() {
                     <div className=''>
                         <form onSubmit={handleSubmit} className='flex flex-col bg-white rounded lg:px-40 p-5 mt-2 gap-4 lg:gap-2'>
                             <h1 className='text-2xl font-bold bg-blue-50  text-center p-5 rounded mb-3'>User Registration</h1>
-
+                            <img className='w-40' src={userData.image} alt="your-profile-picture" />
                             <Button
                                 component="label"
                                 role={undefined}
@@ -83,7 +95,8 @@ function Signup() {
                                 startIcon={<CloudUploadIcon />}
                             >
                                 Upload image
-                                <VisuallyHiddenInput type="file" />
+                                {/* <input type="file"  style={{ display: 'none' }} /> */}
+                                <VisuallyHiddenInput accept="image/*" onChange={handleImageChange} type="file" />
                             </Button>
 
                             <TextField
