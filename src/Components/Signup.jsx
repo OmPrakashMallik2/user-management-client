@@ -32,7 +32,7 @@ function Signup() {
         qualifications: '',
         address: '',
         contactNumber: '',
-        image: null
+        image: ''
     });
 
     const handleChange = (e) => {
@@ -68,7 +68,7 @@ function Signup() {
                     qualifications: '',
                     address: '',
                     contactNumber: '',
-                    image: null
+                    image: ''
                 });
             }).catch((err) => {
                 console.error(err);
@@ -86,7 +86,7 @@ function Signup() {
                     <div className=''>
                         <form onSubmit={handleSubmit} className='flex flex-col bg-white rounded lg:px-40 p-5 mt-2 gap-4 lg:gap-2'>
                             <h1 className='text-2xl font-bold bg-blue-50  text-center p-5 rounded mb-3'>User Registration</h1>
-                            <img className='w-40' src={userData.image} alt="your-profile-picture" />
+                            <img className='w-40' src={userData.image} alt="your-profile" />
                             <Button
                                 component="label"
                                 role={undefined}
