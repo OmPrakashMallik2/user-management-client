@@ -46,11 +46,14 @@ function Signup() {
         reader.onload = () => {
             setUserData({ ...userData, image: reader.result });
         };
+
+        // console.log("image details" + reader.readAsDataURL(file));
         reader.readAsDataURL(file);
     };
-    
+
 
     const handleSubmit = (e) => {
+        console.log(userData);
         e.preventDefault();
         axios
             .post("https://user-management-server-production.up.railway.app/user", userData)
@@ -85,7 +88,7 @@ function Signup() {
                         <form onSubmit={handleSubmit} className='flex flex-col bg-white rounded lg:px-40 p-5 mt-2 gap-4 lg:gap-2'>
                             <h1 className='text-2xl font-bold bg-blue-50  text-center p-5 rounded mb-3'>User Registration</h1>
                             <img className='w-40' src={userData.image} alt="your-profile" />
-                            <Button
+                            {/* <Button
                                 component="label"
                                 role={undefined}
                                 variant="outlined"
@@ -93,13 +96,14 @@ function Signup() {
                                 startIcon={<CloudUploadIcon />}
                             >
                                 Upload image
-                                {/* <input type="file"  style={{ display: 'none' }} /> */}
-                                <VisuallyHiddenInput accept="image/*" onChange={handleImageChange} type="file" />
-                            </Button>
+                                <VisuallyHiddenInput onChange={handleImageChange} type="file" />
+                            </Button> */}
+
+                            <input type="file" onChange={handleImageChange}  />
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="fullName"
                                 label="Full Name"
                                 type='text'
                                 name='fullName'
@@ -108,7 +112,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="email"
                                 label="Email"
                                 type='email'
                                 name='email'
@@ -117,7 +121,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="username"
                                 label="username"
                                 type='text'
                                 name='username'
@@ -126,7 +130,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="password"
                                 label="password"
                                 type='password'
                                 name='password'
@@ -135,7 +139,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="bio"
                                 label="Bio"
                                 type='text'
                                 name='bio'
@@ -144,7 +148,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="dateOfBirth"
                                 label="Date of birth (DD/MM/YYYY)"
                                 type='text'
                                 name='dateOfBirth'
@@ -153,7 +157,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="gender"
                                 label="Gender"
                                 type='text'
                                 name='gender'
@@ -162,7 +166,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="qualifications"
                                 label="Education"
                                 type='text'
                                 name='qualifications'
@@ -170,7 +174,7 @@ function Signup() {
                             />
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="contactNumber"
                                 label="Mobile Number"
                                 type='text'
                                 name='contactNumber'
@@ -179,7 +183,7 @@ function Signup() {
 
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="address"
                                 label="Address"
                                 type='text'
                                 name='address'
