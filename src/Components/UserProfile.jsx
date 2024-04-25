@@ -2,12 +2,12 @@ import axios from 'axios';
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-function UserProfile({ userDataProp }) {
+function UserProfile() {
 
     const navigate = useNavigate();
 
     const location = useLocation();
-    const userData = location.state.userData; // Access user data from location state
+    const userDataProp = location.state.userData; // Access user data from location state
 
 
     const deleteUser = () => {

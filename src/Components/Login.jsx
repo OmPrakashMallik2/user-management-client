@@ -1,7 +1,6 @@
 import { Button, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
-import UserProfile from './UserProfile';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
